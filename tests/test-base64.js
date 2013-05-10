@@ -26,3 +26,9 @@ exports.testBase64Encode = function(test) {
   test.equal(p['yay'], '✓ à la mode');
   test.done();
 }
+
+exports.testDecodeEmptyString = function(test) {
+  var file = path.join(__dirname, 'utf8data.xml');
+  test.equal(plist.parseStringSync('<plist><data></data></plist>'), '');
+  test.done();
+}
